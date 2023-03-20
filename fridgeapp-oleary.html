@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<!-- A div to group everything together to accomplish 
+turning the "fridge" on and off-->
+<div id="page">
+    <head>
+    <title> E06 JS Fridge App </title>  
+    <meta charset="UTF-8">
+    
+        <!-- Styles-->
+        <style>
+            html
+            {
+                background-color:black;
+                padding-left: 30%;
+                padding-right:30%;
+            }
+            .button
+            {
+                font-size: 20px;
+            }
+            .clock
+            {
+                font-size: 15px;
+            }
+
+        </style>
+    
+    </head>
+
+<body onload="startTime(), Off()">
+    <!-- Buttons to turn the page on and off
+        accomplished by changing the background color
+        to different colors (balck and cornsilk)-->
+        <p><center><button class="button" onclick="On()"> On </button></center></p>
+        <p><center><button class="button" onclick="Off()"> Off </button></center></p>
+
+        
+    <!-- Header -->
+    <h1><center>Welcome To Your Fridge</center></h1>
+
+    <!-- The running clock-->
+    <p><center><div id="clock"></div></center></p>
+
+<!-- Fridge function buttons-->
+    <!-- Button to show inside the fridge-->
+    <p><center><button id="function1"class="button" onclick="showFridge()"> Show Fridge Contents </button></center></p>
+    <!-- Button to show the weatehr-->
+    <p><center><button id="function2" class="button" onclick="showWeather()"> Show Weather </button></center></p>
+     <!-- Button to show the weatehr-->
+     <p><center><button id="function3" class="button" onclick="showTV()"> Show TV </button></center></p>
+
+    <!-- Inside the fridge -->
+        <center><img  id="fridge" src="https://www.naturefresh.ca/wp-content/uploads/How-To-Organize-Your-Fridge-InsideFridge-terraskitchen.jpg" alt="weather" style="visibility:hidden; width: 400px; height: 500px;" /></center>
+        <br>
+
+        <!-- Weather -->
+        <center><img  id="weather" src="https://t4.ftcdn.net/jpg/03/85/33/67/360_F_385336747_lCcNeRpqrhmwr3TiToK4DokmwljzEY1q.jpg" alt="weather" style="visibility:hidden; width: 300px; height: 200px;"/></center>
+
+        <!-- TV -->
+        <center><img  lass="image" id="TV" src="https://media.newyorker.com/photos/637bbb30df6b41aad2561e2a/master/pass/Caesar-World-Cup-Iran-England.jpg" alt="TV" style="visibility:hidden; width: 300px; height: 300px;"/></center>
+
+    <script>
+    // function to have a running clock
+    function startTime() 
+    {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById("clock").innerHTML =  h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+
+
+
+    // add zero in front of numbers that are less than 10
+    function checkTime(i) 
+    {
+        if (i < 10) {i = "0" + i}; 
+        return i;
+    }
+
+    // shows the inside of the fridge
+    function showFridge()
+    {
+        document.getElementById("fridge").style.visibility="visible";
+        document.getElementById("weather").style.visibility="hidden";
+        document.getElementById("TV").style.visibility="hidden";
+    }
+
+    // shows the weather
+    function showWeather()
+    {
+        document.getElementById("weather").style.visibility="visible";
+        document.getElementById("fridge").style.visibility="hidden";
+        document.getElementById("TV").style.visibility="hidden";
+    }
+
+    // shows the TV
+    function showTV()
+    {
+        document.getElementById("TV").style.visibility="visible";
+        document.getElementById("fridge").style.visibility="hidden";
+        document.getElementById("weather").style.visibility="hidden";
+        
+    }
+
+    // functions for both teh on and off buttons
+    function On()
+    {
+        document.getElementById("page").style.background="cornsilk";
+        
+        document.getElementById("function1").style.visibility="visible";
+        document.getElementById("function2").style.visibility="visible";
+        document.getElementById("function3").style.visibility="visible";
+    }
+    function Off()
+    {
+        document.getElementById("page").style.backgroundColor="black";
+        document.getElementById("fridge").style.visibility="hidden";
+        document.getElementById("weather").style.visibility="hidden";
+        document.getElementById("TV").style.visibility="hidden";
+
+        document.getElementById("function1").style.visibility="hidden";
+        document.getElementById("function2").style.visibility="hidden";
+        document.getElementById("function3").style.visibility="hidden";
+    }
+
+</script>
+
+</body>
+</html>
