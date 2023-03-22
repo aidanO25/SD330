@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <style>
+        body
+        {
+            background-color: wheat;
+
+        }
+        /* used to create the div grid */
+        .grid-container 
+        {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+        }
+
+        .grid-item 
+        {
+            background-color: lightgray;
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-radius: 25px;
+            padding: 20px;
+            font-size: 18px;
+            align-items: center;
+        }
+        .hide
+        {
+            display: none;
+            background-color: lightblue;
+            border-radius: 7%;
+            padding: 5%;
+        }
+    
+        .myDIV:hover + .hide 
+        {
+            display: block;
+        }
+        .button
+        {
+            float: right;
+            font-size: 30px;
+            border-radius: 25px;
+        }  
+    </style>
+
+
+    <head>
+        <meta charset="UTF-8">
+        <title> D01 - O'Leary</title>
+    </head>
+
+    <body>
+        <!-- Heading-->
+        <p><button class="button" onclick="On()"> Show/Hide </button></p>
+        <br>
+        <h1>D01 - My Design Principles Document - O'Leary</h1>
+        <h4 style="padding-right: 75px; color: blue;"> Hover your mouse over the title of the principle you would like to view, or press 
+            Show/Hide to view all, NOTE: you can not hover over the title afterwards</h4>
+        
+        <hr>
+
+        <!--Using divs to create a grid for the design principles-->
+
+    <div class="grid-container">
+
+    <!-- First Row-->
+        <div class="grid-item">
+            <div class="myDIV" ><h3> Key Principles </h3></div>
+
+            <div class="hide" id="1">
+                <ul>
+                    <li>Visibility</li>
+                    <li>Consistancy</li>
+                    <li>Feedback</li>
+                    <li>Constraints</li>
+                    <li>Affordances</li>
+                    <li>Accessabilty</li>
+                </ul>
+            </div>
+        </div>  
+
+        <div class="grid-item">
+            <div class="myDIV" ><h3> User Design Principles </h3></div>
+
+            <div class="hide" id="2">
+                <ul>
+                    <li>Put the user first</li>
+                    <li>Know who your target users are</li>
+                    <li>Implement user feedback into the new design</li>
+                    <li>Ensure consistency with what your usuers expect</li>
+                    <li>Understand users needs</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="myDIV" ><h3> Cognative Principles </h3></div>
+
+            <div class="hide" id="3">
+                <ul>
+                    <li>Acknowledge people have different ideas of doing things</li>
+                    <li>Think how a new user would interact with features when designing them</li>
+                    <li>Put yourself in the mindset of the user when desiging different pages to navigate to</li>
+                    <li>Make sure that you make pages accessable to visual impariments such as color blindness</li>
+                    <li>Make features easily understandable by using metaphores such as a shopping cart for keeping 
+                        items in while you continue to shop</li>
+                    <li>Think about the way users will interact with your sight having certain cognative conditions such as ADHD</li>
+                    <li>Respect the focus of other users, number of notifications given is an example of this</li>
+                </ul>
+            </div>
+        </div>
+
+    <!-- Seconnd Row-->
+        <div class="grid-item">
+            <div class="myDIV" ><h3> Cultural and Societal Principles </h3></div>
+
+            <div class="hide" id="4">
+                <ul>
+                    <li>Ensure atequite knowledge on the culture which you are developing a product for</li>
+                    <li>Know certain phrases that may be viewed differently, either posotively or negatively, in one culture than the one you are from</li>
+                    <li>Understand the laws of the area that you plan to develop an application for</li>
+                    <li>Tailor the application that sutes the intended culture </li>
+                </ul>
+            </div>
+        </div>  
+
+        <div class="grid-item">
+            <div class="myDIV" ><h3> User Design Principles </h3></div>
+
+            <div class="hide" id="5">
+                <ul>
+                    <li>Put the user first</li>
+                    <li>Know who your target users are</li>
+                    <li>Implement user feedback into the new design</li>
+                    <li>Ensure consistency with what your usuers expect</li>
+                    <li>Understand users needs</li>
+                    <li>Reduce users' experiences of anxiety</li>
+                    <li>Help users gain confidence and mastery and feel in control, this can be done by keeping things consistent</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="myDIV" ><h3> Cognative Principles </h3></div>
+
+            <div class="hide" id="6">
+                <ul>
+                    <li>Acknowledge people have different ideas of doing things</li>
+                    <li>Think how a new user would interact with features when designing them</li>
+                    <li>Point the user in the right direction such as making specific functions stand out 
+                        from the rest which minimizes confusion</li>
+                    <li>Simplify features and pages as much as possible</li>
+                    <li>Use metaphores to allow users to hopefully understand what that feature does</li>
+                    <li>Create user stories and scenarios to understand how a user would interact with the system</li>
+                    <li>Balance the amount of information given on each page to minimize page congestion and user fustration</li>
+                </ul>
+            </div>
+        </div>
+
+    <!-- Third Row-->
+        <div class="grid-item">
+            <div class="myDIV" ><h3> Social Principles </h3></div>
+
+            <div class="hide" id="7">
+                <ul>
+                    <li>Design your systems, more specifically AI chat bots, that makes the user feel they are talking to a real person (if that is the intent) </li>
+                    <li>Confirm that your application, an example is FaceTime, can reliably transmit information so face to face videos and audio are not low quality</li>
+                    <li>Make the user feel comfortable when interacting with your system/application</li>
+                    <li>Ensure you have protection against innapropriate messages between users, especially when the intended audience are young children</li>
+                    <li>Implement features that allow users to connect</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="myDIV" ><h3> Graphical Principles </h3></div>
+
+            <div class="hide" id="8">
+                <ul>
+                    <li>Design your application to be visibly asethetic</li>
+                    <li>Align information in a neat and ordly fassion that isn't overstimmulating to the user</li>
+                    <li>Use colors that are similar to one another rather than obnoxious ones when it isn't needed</li>
+                    <li>Ensure text is easily readable</li>
+                    <li>Add information that doesn't properly fit on the page to a new page allowing the originalto be de-cluttered</li>
+                    <li>Emphasize pictures or text that you want to make sure the user sees</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="myDIV" ><h3> Prototyping Principles </h3></div>
+
+            <div class="hide" id="9">
+                <ul>
+                    <li>Create a simple moc up, other wise known as a low-fidelity prototype which saves you money and time</li>
+                    <li>Implement teh features you plan to have for the final product into your prototype for users to test them</li>
+                    <li>Gather user feedback, both posotive and negative, to further advance your prototype</li>
+                    <li>List out all the ideas you have for the product by creating a conceptual model or story board</li>
+                    <li>Develop a high-fidelity prototype when you get closer to teh final product</li>
+                </ul>
+            </div>
+        </div>
+
+      </div>
+   
+
+    
+    </body>
+
+    <script>
+    function On()
+    {
+        var element = document.getElementById("1");
+        if(element.style.display == "block")
+        {
+            element.style.display = "none";
+        }
+        else
+        {
+            element.style.display = "block";
+        }
+
+        var element = document.getElementById("2");
+        if(element.style.display == "block")
+        {
+            element.style.display = "none";
+        }
+        else
+        {
+            element.style.display = "block";
+        }
+
+        var element = document.getElementById("3");
+        if(element.style.display == "block")
+        {
+            element.style.display = "none";
+        }
+        else
+        {
+            element.style.display = "block";
+        }
+
+        var element = document.getElementById("4");
+        if(element.style.display == "block")
+        {
+            element.style.display = "none";
+        }
+        else
+        {
+            element.style.display = "block";
+        }
+
+        var element = document.getElementById("5");
+        if(element.style.display == "block")
+        {
+            element.style.display = "none";
+        }
+        else
+        {
+            element.style.display = "block";
+        }
+
+        var element = document.getElementById("6");
+        if(element.style.display == "block")
+        {
+            element.style.display = "none";
+        }
+        else
+        {
+            element.style.display = "block";
+        }
+
+        var element = document.getElementById("7");
+        if(element.style.display == "block")
+        {
+            element.style.display = "none";
+        }
+        else
+        {
+            element.style.display = "block";
+        }
+
+        var element = document.getElementById("8");
+        if(element.style.display == "block")
+        {
+            element.style.display = "none";
+        }
+        else
+        {
+            element.style.display = "block";
+        }
+
+        var element = document.getElementById("9");
+        if(element.style.display == "block")
+        {
+            element.style.display = "none";
+        }
+        else
+        {
+            element.style.display = "block";
+        }
+
+
+        /*
+        for (let i = 0; i < 6; i++) 
+        {
+            var element = document.getElementById("2");
+            if(element.style.display == "block")
+            {
+                element.style.display = "none";
+            }
+            else
+            {
+                element.style.display = "block";
+            }
+        }
+        */
+
+
+    }
+    </script>
+
+    <!--Footing-->
+    <footer>
+        <br>
+        <hr>
+        <small>(C) A. O'Leary</small>
+    </footer>
+</html>
