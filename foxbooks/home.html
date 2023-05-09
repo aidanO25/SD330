@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Fox-Books</title>
+    </head>
+
+    <style>
+        /* Style for the header section */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        /* Style for the navigation bar */
+        nav {
+            display: flex;
+            align-items: center;
+            height: 50px;
+            background-color: rgb(242, 91, 91);
+            padding: 0 20px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3)
+        }
+        
+        nav img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        /* Keeps the footer at the bottom*/
+        body {
+            min-height: 95vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+        }
+        
+        /* Style for the sign-in button */
+        .btn {
+            margin-left: auto;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 100%;
+        }
+        
+        /* Style for the content section */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            display: inline-grid;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        
+        .box {
+            flex-basis: calc(33.33% - 20px);
+            background-color: #ccc;
+            padding: 20px;
+            border: 1px solid white;
+            border-width: 5px;
+            text-align: center;
+            overflow: auto;
+            border-radius: 10%;
+            font-size: large;
+        }
+
+        /* hover function*/
+        .btn:hover {
+            background-color: #9b9b9b;
+        }
+
+        #image {
+            cursor: pointer;
+        }
+        
+        #menu {
+            display: none;
+            position: absolute;
+            top: 210px;
+            left: 8%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #menu.active {
+            display: block;
+        }
+
+        #menu select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <body>
+        <!-- Site ID-->
+        <br>
+    <header>
+        <center><img style="opacity: 0.8; scale: 80%;" src="logo.png" alt="Foxbooks"></center>
+    </header>
+
+    <br>
+    <br>
+    <nav>
+        <!-- isomorphic menu icon that is operational
+        I tried to make it so you wouldn't have to click an options
+        form but i really couldn't figure it out-->
+        <img id="image" src="ham.png" alt="Menu Icon">
+        <div id="menu">
+            <label for="dropdown">Menu:</label>
+            <select id="dropdown">
+              <option value="">Choose an page</option>
+              <option value="courseList.html">Course List</option>
+              <option value="https://www.marist.edu/">Marist College</option>
+              <option value="https://www.barnesandnoble.com/">Barns & Noble</option>
+        </select>
+        </div>
+        
+        <!-- Breadcrumb nav-->
+        <p style="font-size: larger;">HOME</p>
+
+        <!-- Isomorphic search function-->
+        <form action="#" method="get" style="margin-left:auto">
+            <label for="search" style="font-size: larger;">Search:</label>
+            <input type="text" id="search" name="search" size="50">
+            <button class="btn" type="submit">GO</button>
+          </form>
+
+        <!-- Sign in with hover funciton to show it is clickable-->
+        <button class="btn">Sign In</button>
+    </nav>
+    
+    <br>
+    <br>
+    
+    <!-- Information and links to direct to other pages (course list)-->
+    <center><div class="content">
+        <div class="box">Welcome to Fox-Books! Here you can find a list of courses, 
+            books related to those courses, and more.
+            <br>
+            <br>
+            <center><img src="welcome.jpeg" alt="courses" width="275" height="225" style="border-radius: 5%;box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);"></center>
+        </div>
+        <div class="box">Fox-Books has a course list that contains available courses and books found <a href=courseList.html><b>here!</b></a>
+            <br>
+            <br>
+            <center><img src="course.png" alt="courses" width="275" height="225" style="border-radius: 5%; box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3)"></center>
+        </div>
+        <div class="box">Fox-Books conbines state-of-the-art web technology with the essentials you need working along side Barns and Noble.
+            <br>
+            <br>
+            <center><img src="book.avif" alt="courses" width="275" height="225" style="border-radius: 5%; box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3)"></center>
+        </div>
+    </div></center>
+
+    <!-- Allows the user to click the menu icon and navigate to other pages-->
+    <script>
+        var image = document.getElementById('image');
+        var menu = document.getElementById('menu');
+        var dropdown = document.getElementById('dropdown');
+        
+        image.addEventListener('click', function() {
+        if (menu.classList.contains('active')) {
+            menu.classList.remove('active');
+        } else {
+            menu.classList.add('active');
+        }
+        });
+
+        dropdown.addEventListener('change', function() {
+        var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+        if (selectedOption) {
+            window.location.href = selectedOption;
+        }
+        });
+      </script>
+   
+    <!-- Footing-->
+    <footer>
+        <hr>
+        <br>
+        &copy; A. O'Leary 2023
+    </footer>
+    </body>
+
+</html>
